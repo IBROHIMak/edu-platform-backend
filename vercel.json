@@ -2,15 +2,23 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "src": "server.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
   ],
   "env": {
-    "VITE_API_URL": "https://edu-platform-backend2.vercel.app"
+    "NODE_ENV": "production",
+    "MONGODB_URI": "mongodb+srv://abduqodirovibrohim001_db_user:JpBqZAnyUQwId8Xc@eduplatform.v8drfvx.mongodb.net/eduplatform?appName=eduplatform",
+    "JWT_SECRET": "your_super_secret_jwt_key_change_this_in_production_2024_very_long_and_secure",
+    "JWT_EXPIRE": "7d",
+    "UPLOAD_PATH": "/tmp",
+    "MAX_FILE_SIZE": "10000000",
+    "CLIENT_URL": "https://edu-platform-frontend.vercel.app"
   }
 }
