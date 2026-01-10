@@ -33,6 +33,7 @@ const io = socketIo(server, {
         process.env.CLIENT_URL || "http://localhost:3001",
         "http://localhost:3000",
         "http://localhost:3001",
+        "http://localhost:3002",
         "https://your-frontend-app.vercel.app"
       ];
       
@@ -78,6 +79,7 @@ app.use(cors({
       process.env.CLIENT_URL || "http://localhost:3001",
       "http://localhost:3000", // Development fallback
       "http://localhost:3001", // Original port
+      "http://localhost:3002", // Current frontend port
       "https://your-frontend-app.vercel.app" // Replace with actual production URL
     ];
     
